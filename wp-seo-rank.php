@@ -2,11 +2,11 @@
 /*
 Plugin Name: Wordpress SEO-Rank
 Plugin URI: http://nexxuz.com/wordpress-seo-rank-plugin.html
-Description: Seo report on your  dashboard of all your statistics ranking in web:<br><br>- PageRank Google<br>- Alexa Rank	<br>- Backlinks Google	<br>- Backlinks Yahoo	<br>- Users Registered	<br>- FeedBurner Subscribers	<br>- Followers Twitter	<br>- Youtube Subscribers <br>- Widget
+Description: Seo report on your  dashboard of all your statistics ranking in web:<br>\n<br>- PageRank Google<br>- Alexa Rank	<br>- Backlinks Google	<br>- Backlinks Yahoo	<br>- Users Registered	<br>- FeedBurner Subscribers	<br>- Followers Twitter	<br>- Youtube Subscribers <br>- Widget
 Author: Jodacame
-Version: 0.3
-
 Author URI: http://nexxuz.com/
+Version: 0.4
+
 
 
 */
