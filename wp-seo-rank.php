@@ -4,7 +4,7 @@ Plugin Name: Wordpress SEO-Rank
 Plugin URI: http://nexxuz.com/wordpress-seo-rank-plugin.html
 Description: Seo report on your dashboad of all your statistics ranking in web:<br><br>- PageRank Google<br>- Alexa Rank	<br>- Backlinks Google	<br>- Backlinks Yahoo	<br>- Users Registered	<br>- FeedBurner Subscribers	<br>- Followers Twitter	<br>- Youtube Subscribers <br>- Widget
 Author: Jodacame
-Version: 0.1
+Version: 0.2
 
 Author URI: http://nexxuz.com/
 
@@ -61,7 +61,7 @@ function wp_seo_rank_widget_admin_function() {
 			</tr>
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/google.png" align="absmiddle" style="padding-right:10px">Backlinks Google</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/google.png" align="absmiddle" style="padding-right:10px">Backlinks Google</span> 
 				</td>
 			<td align="right">
 					<span style="color:#000000;font-weight:bold;"><a target="_blank" href="http://www.google.com/search?oe=utf8&ie=utf8&source=uds&start=0&filter=0&hl=en&q=link:<?php echo site_url(); ?>"><?php echo number_format($data['ValBacklinksGoogle']); ?></a></span>
@@ -71,7 +71,7 @@ function wp_seo_rank_widget_admin_function() {
 			</tr>
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/yahoo.png" align="absmiddle" style="padding-right:10px">Backlinks Yahoo</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/yahoo.png" align="absmiddle" style="padding-right:10px">Backlinks Yahoo</span> 
 				</td>
 			<td align="right">
 					<span style="color:#000000;font-weight:bold;"><a target="_blank" href="http://siteexplorer.search.yahoo.com/search;_ylt=A0oG7zbdV5ZMIt8AdFddhMkF?p=<?php echo site_url(); ?>&y=Explore+URL&fr=sfp"><?php echo number_format($data['ValBacklinksYahoo']); ?></a></span>
@@ -80,7 +80,7 @@ function wp_seo_rank_widget_admin_function() {
 			
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/user.png" align="absmiddle" style="padding-right:10px">Users Registered</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/user.png" align="absmiddle" style="padding-right:10px">Users Registered</span> 
 				</td>
 				<td align="right">
 					<span style="color:#000000;font-weight:bold;"><?php $users = $wpdb->get_var("SELECT COUNT(ID) FROM $wpdb->users");
@@ -92,7 +92,7 @@ function wp_seo_rank_widget_admin_function() {
 			
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/feedburner.png" align="absmiddle" style="padding-right:10px">FeedBurner Subscribers</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/feedburner.png" align="absmiddle" style="padding-right:10px">FeedBurner Subscribers</span> 
 				</td>
 				<td align="right">
 					<span style="color:#000000;font-weight:bold;"><a target="_Blank" href="http://feeds.feedburner.com/<?php echo $data['feedburner']; ?>"><?php echo number_format($data['ValFeedBurner']); ?></a></span>
@@ -103,7 +103,7 @@ function wp_seo_rank_widget_admin_function() {
 			
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/twitter.png" align="absmiddle" style="padding-right:10px">Followers</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/twitter.png" align="absmiddle" style="padding-right:10px">Followers</span> 
 				</td>
 				<td align="right">
 					<span style="color:#000000;font-weight:bold;"><a target="_blank" href="http://twitter.com/<?php echo $data['twitter']; ?>/followers"><?php echo number_format($data['ValFollowers']); ?></a></span>
@@ -112,7 +112,7 @@ function wp_seo_rank_widget_admin_function() {
 			</tr>
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/youtube.png" align="absmiddle" style="padding-right:10px">Youtube Subscribers</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/youtube.png" align="absmiddle" style="padding-right:10px">Youtube Subscribers</span> 
 				</td>
 				<td align="right">
 					<span style="color:#000000;font-weight:bold;"><a target="_blank" href="http://www.youtube.com/user/<?php echo $data['youtube']; ?>"><?php echo number_format($data['ValYoutube']); ?></a></span>
@@ -123,7 +123,7 @@ function wp_seo_rank_widget_admin_function() {
 			
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/update.png" align="absmiddle" style="padding-right:10px">Last Update</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/update.png" align="absmiddle" style="padding-right:10px">Last Update</span> 
 				</td>
 				<td align="right">
 					<span style="color:#000000;font-weight:bold;"><?php echo $data['ValLastUpdate']; ?></span>
@@ -137,8 +137,8 @@ function wp_seo_rank_widget_admin_function() {
 		
 		
 		
-	<span style="width:100%;text-align:center;display:block"><a target="_Blank" href="http://nexxuz.com/donate.php"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/donate.png" border="0" align="top" style="padding-right:2px"> Donate</a></span><br>
-	<span style="width:100%;text-align:right;display:block"><a href="javascript:jQuery('#settingSeo').slideToggle(200);"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/settings.png" border="0" align="top" style="padding-right:2px"> Settings</a></span><br>
+	<span style="width:100%;text-align:center;display:block"><a target="_Blank" href="http://nexxuz.com/donate.php"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/donate.png" border="0" align="top" style="padding-right:2px"> Donate</a></span><br>
+	<span style="width:100%;text-align:right;display:block"><a href="javascript:jQuery('#settingSeo').slideToggle(200);"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/settings.png" border="0" align="top" style="padding-right:2px"> Settings</a></span><br>
 
 	<div id="settingSeo" style="display:none">
 		<form method="POST">
@@ -383,7 +383,7 @@ function control(){
 	<table  id="wp-seo-rank" style="width:95%"  CELLSPACING="5px">
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/pr.png" align="absmiddle" style="padding-right:10px">PageRank</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/pr.png" align="absmiddle" style="padding-right:10px">PageRank</span> 
 				</td>
 				<td>
 				<input type="checkbox" <?php echo $show_pr; ?> name="wp_seo_rank_show_pr">
@@ -392,7 +392,7 @@ function control(){
 			</tr>
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/alexa.png" align="absmiddle" style="padding-right:10px">Alexa Rank</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/alexa.png" align="absmiddle" style="padding-right:10px">Alexa Rank</span> 
 				</td>
 			<td>
 				<input type="checkbox" <?php echo $show_alexa; ?> name="wp_seo_rank_show_alexa">
@@ -400,7 +400,7 @@ function control(){
 			</tr>
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/google.png" align="absmiddle" style="padding-right:10px">Backlinks Google</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/google.png" align="absmiddle" style="padding-right:10px">Backlinks Google</span> 
 				</td>
 		<td>
 				<input type="checkbox" <?php echo $show_google; ?> name="wp_seo_rank_show_google">
@@ -409,7 +409,7 @@ function control(){
 			</tr>
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/yahoo.png" align="absmiddle" style="padding-right:10px">Backlinks Yahoo</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/yahoo.png" align="absmiddle" style="padding-right:10px">Backlinks Yahoo</span> 
 				</td>
 		<td>
 				<input type="checkbox" <?php echo $show_yahoo; ?> name="wp_seo_rank_show_yahoo">
@@ -417,7 +417,7 @@ function control(){
 			
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/user.png" align="absmiddle" style="padding-right:10px">Users Registered</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/user.png" align="absmiddle" style="padding-right:10px">Users Registered</span> 
 				</td>
 			<td>
 				<input type="checkbox" <?php echo $show_user; ?> name="wp_seo_rank_show_user">
@@ -427,7 +427,7 @@ function control(){
 			
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/feedburner.png" align="absmiddle" style="padding-right:10px">FeedBurner</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/feedburner.png" align="absmiddle" style="padding-right:10px">FeedBurner</span> 
 				</td>
 				<td>
 				<input type="checkbox"  <?php echo $show_feedburner; ?> name="wp_seo_rank_show_feedburner">
@@ -437,7 +437,7 @@ function control(){
 			
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/twitter.png" align="absmiddle" style="padding-right:10px">Followers</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/twitter.png" align="absmiddle" style="padding-right:10px">Followers</span> 
 				</td>
 			<td>
 				<input type="checkbox" <?php echo $show_twitter; ?> name="wp_seo_rank_show_twitter">
@@ -445,7 +445,7 @@ function control(){
 			</tr>
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/youtube.png" align="absmiddle" style="padding-right:10px">Youtube Subscribers</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/youtube.png" align="absmiddle" style="padding-right:10px">Youtube Subscribers</span> 
 				</td>
 			<td>
 				<input type="checkbox" <?php echo $show_youtube; ?> name="wp_seo_rank_show_youtube">
@@ -458,7 +458,7 @@ function control(){
 			
 		</table>
 		<br>
-		<span style="width:100%;text-align:center;display:block"><a target="_Blank" href="http://nexxuz.com/donate.php"><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/donate.png" border="0" align="top" style="padding-right:2px"> Donate</a></span><br>
+		<span style="width:100%;text-align:center;display:block"><a target="_Blank" href="http://nexxuz.com/donate.php"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/donate.png" border="0" align="top" style="padding-right:2px"> Donate</a></span><br>
 		
   <?php
    if (isset($_POST['wp_seo_rank_title'])){
@@ -487,7 +487,7 @@ function control(){
     <?php if($data['show_pr']=='on'){ ?>
 			<tr>
 				<td>
-					<span><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/pr.png" align="absmiddle" style="padding-right:10px">PageRank</span> 
+					<span><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/pr.png" align="absmiddle" style="padding-right:10px">PageRank</span> 
 				</td>
 				<td align="right">
 					<span style="font-weight:bold;"><?php echo $data['ValPageRank'] ?>/10</span>
@@ -498,7 +498,7 @@ function control(){
 		<?php }if($data['show_alexa']=='on'){ ?>
 			<tr>
 				<td>
-					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/alexa.png" align="absmiddle" style="padding-right:10px">Alexa Rank</span> 
+					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/alexa.png" align="absmiddle" style="padding-right:10px">Alexa Rank</span> 
 				</td>
 				<td align="right">
 					<span style="font-weight:bold;"><?php echo number_format($data['ValAlexaRank']); ?></span>
@@ -508,7 +508,7 @@ function control(){
 		<?php }if($data['show_google']=='on'){ ?>
 			<tr>
 				<td>
-					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/google.png" align="absmiddle" style="padding-right:10px">Backlinks Google</span> 
+					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/google.png" align="absmiddle" style="padding-right:10px">Backlinks Google</span> 
 				</td>
 			<td align="right">
 					<span style="font-weight:bold;"><?php echo number_format($data['ValBacklinksGoogle']); ?></span>
@@ -519,7 +519,7 @@ function control(){
 		<?php }if($data['show_yahoo']=='on'){ ?>
 			<tr>
 				<td>
-					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/yahoo.png" align="absmiddle" style="padding-right:10px">Backlinks Yahoo</span> 
+					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/yahoo.png" align="absmiddle" style="padding-right:10px">Backlinks Yahoo</span> 
 				</td>
 			<td align="right">
 					<span style="font-weight:bold;"><?php echo number_format($data['ValBacklinksYahoo']); ?></span>
@@ -529,7 +529,7 @@ function control(){
 			<tr>
 			<?php }if($data['show_user']=='on'){ ?>
 				<td>
-					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/user.png" align="absmiddle" style="padding-right:10px">Users Registered</span> 
+					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/user.png" align="absmiddle" style="padding-right:10px">Users Registered</span> 
 				</td>
 				<td align="right">
 					<span style="font-weight:bold;"><?php $users = $wpdb->get_var("SELECT COUNT(ID) FROM $wpdb->users");
@@ -541,7 +541,7 @@ function control(){
 			
 			<tr>
 				<td>
-					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/feedburner.png" align="absmiddle" style="padding-right:10px">FeedBurner</span> 
+					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/feedburner.png" align="absmiddle" style="padding-right:10px">FeedBurner</span> 
 				</td>
 				<td align="right">
 					<span style="font-weight:bold;"><?php echo number_format($data['ValFeedBurner']); ?></span>
@@ -552,7 +552,7 @@ function control(){
 			<?php }if($data['show_twitter']=='on'){ ?>
 			<tr>
 				<td>
-					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/twitter.png" align="absmiddle" style="padding-right:10px">Followers</span> 
+					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/twitter.png" align="absmiddle" style="padding-right:10px">Followers</span> 
 				</td>
 				<td align="right">
 					<span style="font-weight:bold;"><?php echo number_format($data['ValFollowers']); ?></span>
@@ -562,7 +562,7 @@ function control(){
 			<?php }if($data['show_youtube']=='on'){ ?>
 			<tr>
 				<td>
-					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpressp-seo-rank/images/youtube.png" align="absmiddle" style="padding-right:10px">Youtube Subscribers</span> 
+					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/youtube.png" align="absmiddle" style="padding-right:10px">Youtube Subscribers</span> 
 				</td>
 				<td align="right">
 					<span style="font-weight:bold;"><?php echo number_format($data['ValYoutube']); ?></span>
