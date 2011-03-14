@@ -13,16 +13,16 @@ Seo report on your dashboard of all your statistics ranking. Pagerank, Alexa Ran
 Seo report on your dashboard of all your statistics ranking in
 web:
 
-* **SERVICES**
-* PageRank Google
-* Alexa Rank	
-* Backlinks Google
-* Backlinks Yahoo
-* Users Registered
-* FeedBurner Subscribers
-* Followers Twitter
-* Youtube Subscribers
-* Widget
+ * **SERVICES**
+ * PageRank Google
+ * Alexa Rank	
+ * Backlinks Google
+ * Backlinks Yahoo
+ * Users Registered
+ * FeedBurner Subscribers
+ * Followers Twitter
+ * Youtube Subscribers
+ * Widget
 
 [VIEW DEMO ONLINE - WIDGET](http://nexxuz.com)
 
