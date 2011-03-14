@@ -9,7 +9,7 @@ Seo report on your dashboard of all your statistics ranking. Pagerank, Alexa Ran
 
 == Description ==
 
-Seo report on your dashboad of all your statistics ranking in
+Seo report on your dashboard of all your statistics ranking in
 web:<br>
 <br>
 * PageRank Google<br>
@@ -29,3 +29,12 @@ web:<br>
 
 2. Screenshot Widget
 
+DEMO http://nexxuz.com
+
+== Installation ==
+
+
+1. Upload `plugin` to the `/wp-content/plugins/` directory
+1. Activate the plugin through the 'Plugins' menu in WordPress
+1. Go to your dashboard and setting this
+1. Go to widgets and setting this
