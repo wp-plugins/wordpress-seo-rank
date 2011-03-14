@@ -1,5 +1,6 @@
 === Wordpress Seo-Rank===
 Contributors: Jodacame
+Donate link:http://nexxuz.com/donate.php
 Tags: SEO, pagerank, google, alexa, feedburner, followers, twitter, yahoo, Backlinks, youtube, subcribers, widget, dashboard
 Requires at least: 2,7
 Tested up to: 3.1
@@ -22,6 +23,7 @@ web:<br>
 * Youtube Subscribers <br>
 * Widget
 
+DEMO http://nexxuz.com
 
 == Screenshots ==
 
@@ -29,10 +31,8 @@ web:<br>
 
 2. Screenshot Widget
 
-DEMO http://nexxuz.com
 
 == Installation ==
-
 
 1. Upload `plugin` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
