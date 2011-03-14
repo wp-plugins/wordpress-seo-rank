@@ -42,3 +42,9 @@ web:
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Go to your dashboard and setting this
 1. Go to widgets and setting this
+
+== Changelog ==
+
+= 0.6 =
+* Fixes bug firefox [object Object]
+

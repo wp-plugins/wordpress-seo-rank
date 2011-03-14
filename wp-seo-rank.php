@@ -5,7 +5,7 @@ Plugin URI: http://nexxuz.com/wordpress-seo-rank-plugin.html
 Description: Seo report on your  dashboard of all your statistics ranking in web:<br>\n<br>- PageRank Google<br>- Alexa Rank	<br>- Backlinks Google	<br>- Backlinks Yahoo	<br>- Users Registered	<br>- FeedBurner Subscribers	<br>- Followers Twitter	<br>- Youtube Subscribers <br>- Widget
 Author: Jodacame
 Author URI: http://nexxuz.com/
-Version: 0.5
+Version: 0.6
 
 
 
@@ -138,7 +138,7 @@ function wp_seo_rank_widget_admin_function() {
 		
 		
 	<span style="width:100%;text-align:center;display:block"><a target="_Blank" href="http://nexxuz.com/donate.php"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/donate.png" border="0" align="top" style="padding-right:2px"> Donate</a></span><br>
-	<span style="width:100%;text-align:right;display:block"><a href="javascript:jQuery('#settingSeo').slideToggle(200);"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/settings.png" border="0" align="top" style="padding-right:2px"> Settings</a></span><br>
+	<span style="width:100%;text-align:right;display:block"><span style="cursor:pointer" onclick="jQuery('#settingSeo').slideToggle(200);"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/settings.png" border="0" align="top" style="padding-right:2px"> Settings</span></span><br>
 
 	<div id="settingSeo" style="display:none">
 		<form method="POST">
