@@ -11,19 +11,20 @@ Seo report on your dashboard of all your statistics ranking. Pagerank, Alexa Ran
 == Description ==
 
 Seo report on your dashboard of all your statistics ranking in
-web:<br>
-<br>
-* PageRank Google<br>
-* Alexa Rank	<br>
-* Backlinks Google	<br>
-* Backlinks Yahoo	<br>
-* Users Registered	<br>
-* FeedBurner Subscribers	<br>
-* Followers Twitter	<br>
-* Youtube Subscribers <br>
+web:
+
+* **SERVICES**
+* PageRank Google
+* Alexa Rank	
+* Backlinks Google
+* Backlinks Yahoo
+* Users Registered
+* FeedBurner Subscribers
+* Followers Twitter
+* Youtube Subscribers
 * Widget
 
-DEMO http://nexxuz.com
+[VIEW DEMO ONLINE - WIDGET](http://nexxuz.com)
 
 == Screenshots ==
 
