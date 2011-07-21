@@ -5,7 +5,7 @@ Plugin URI: http://nexxuz.com/wordpress-seo-rank-plugin.html
 Description: Seo report on your  dashboard of all your statistics ranking in web:<br>\n<br>- PageRank Google<br>- Alexa Rank	<br>- Backlinks Google	<br>- Backlinks Yahoo	<br>- Users Registered	<br>- FeedBurner Subscribers	<br>- Followers Twitter	<br>- Youtube Subscribers <br>- Widget
 Author: Jodacame
 Author URI: http://nexxuz.com/
-Version: 0.6
+Version: 0.7
 
 
 
@@ -18,6 +18,7 @@ function wp_seo_rank_widget_admin_function() {
     $data['feedburner'] = attribute_escape($_POST['wp_seo_rank_feedburner']);
     $data['twitter'] = attribute_escape($_POST['wp_seo_rank_twitter']);
     $data['youtube'] = attribute_escape($_POST['wp_seo_rank_youtube']);
+    $data['facebook'] = attribute_escape($_POST['wp_seo_rank_facebook']);
     $data['autoupdate'] = attribute_escape($_POST['wp_seo_rank_autoupdate']);
     update_option('wp_seo_rank', $data);
   }
@@ -112,6 +113,16 @@ function wp_seo_rank_widget_admin_function() {
 			</tr>
 			<tr>
 				<td>
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/facebook.png" align="absmiddle" style="padding-right:10px">Followers</span> 
+				</td>
+				<td align="right">
+					<span style="color:#000000;font-weight:bold;"><?php echo number_format($data['ValFacebook']); ?></span>
+						
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
 					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/youtube.png" align="absmiddle" style="padding-right:10px">Youtube Subscribers</span> 
 				</td>
 				<td align="right">
@@ -151,6 +162,9 @@ function wp_seo_rank_widget_admin_function() {
 		</tr>
 		<tr>
 			<td>Youtube </td><td><input name="wp_seo_rank_youtube" type="text" value="<?php echo $data['youtube']; ?>" /></td>
+		</tr>
+		<tr>
+			<td>Facebook Page </td><td><input name="wp_seo_rank_facebook" type="text" value="<?php echo $data['facebook']; ?>" /></td>
 		</tr>
 		<tr>
 		<?php
@@ -203,6 +217,7 @@ function update_seo($force=null){
     $data['twitter'] = $data['twitter'];
     $data['youtube'] = $data['youtube'];
     $data['autoupdate'] = $data['autoupdate'];
+    $data['facebook'] = $data['facebook'];
 		
 		
 	
@@ -222,6 +237,7 @@ function update_seo($force=null){
 		$data['ValFeedBurner'] = getFeedBurner($data["feedburner"]);
 		$data['ValFollowers'] = followerSeo($data["twitter"]);
 		$data['ValYoutube'] = GetSubscriberCountYoutube($data["youtube"]);
+		$data['ValFacebook'] = GetFacebook($data["facebook"]);
 		$data['ValLastUpdate'] = date('Y-m-d');
 		update_option('wp_seo_rank', $data);
 	}
@@ -232,7 +248,19 @@ add_action('wp_dashboard_setup', 'wp_seo_rank_add_dashboard_widgets' );
 /*************************
  * FUNCIONES SEO
  *************************/
- 
+
+function GetFacebook($pageF) 
+{
+	$data = file_get_contents('http://graph.facebook.com/?id='.$pageF);
+
+	$json = $data;
+
+	$obj = json_decode($json);
+	$like_no = $obj->{'shares'};
+	
+	return trim($like_no);
+	
+}
 
  
 function followerSeo($user){
@@ -354,6 +382,7 @@ function control(){
   $show_feedburner='';
   $show_twitter='';
   $show_youtube='';
+  $show_facebook='';
 
 	if($data['show_pr']=='on')
 		$show_pr="CHECKED";
@@ -370,6 +399,8 @@ function control(){
 	if($data['show_twitter']=='on')
 		$show_twitter="CHECKED";
 	if($data['show_youtube']=='on')
+		$show_youtube="CHECKED";
+	if($data['show_facebook']=='on')
 		$show_youtube="CHECKED";
 
     
@@ -445,6 +476,14 @@ function control(){
 			</tr>
 			<tr>
 				<td>
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/facebook.png" align="absmiddle" style="padding-right:10px">Followers</span> 
+				</td>
+			<td>
+				<input type="checkbox" <?php echo $show_facebook; ?> name="wp_seo_rank_show_facebook">
+				</td>
+			</tr>
+			<tr>
+				<td>
 					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/youtube.png" align="absmiddle" style="padding-right:10px">Youtube Subscribers</span> 
 				</td>
 			<td>
@@ -472,6 +511,7 @@ function control(){
     $data['show_twitter'] = attribute_escape($_POST['wp_seo_rank_show_twitter']);
     $data['show_youtube'] = attribute_escape($_POST['wp_seo_rank_show_youtube']);
     $data['show_date'] = attribute_escape($_POST['wp_seo_rank_show_date']);
+    $data['show_facebook'] = attribute_escape($_POST['wp_seo_rank_show_facebook']);
     
     update_option('wp_seo_rank', $data);
   }
@@ -549,7 +589,18 @@ function control(){
 				</td>
 			</tr>
 			
-			<?php }if($data['show_twitter']=='on'){ ?>
+			<?php }if($data['show_facebook']=='on'){ ?>
+			<tr>
+				<td>
+					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/facebook.png" align="absmiddle" style="padding-right:10px">Followers</span> 
+				</td>
+				<td align="right">
+					<span style="font-weight:bold;"><?php echo number_format($data['ValFacebook']); ?></span>
+						
+				</td>
+			</tr>
+			
+				<?php }if($data['show_twitter']=='on'){ ?>
 			<tr>
 				<td>
 					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/twitter.png" align="absmiddle" style="padding-right:10px">Followers</span> 
@@ -559,6 +610,7 @@ function control(){
 						
 				</td>
 			</tr>
+			
 			<?php }if($data['show_youtube']=='on'){ ?>
 			<tr>
 				<td>

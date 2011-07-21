@@ -25,6 +25,7 @@ web:
  - Followers Twitter
  - Youtube Subscribers
  - Widget
+ - Facebook
 
 = VIEW DEMO ONLINE =
 [WIDGET](http://nexxuz.com)
@@ -44,6 +45,9 @@ web:
 1. Go to widgets and setting this
 
 == Changelog ==
+
+= 0.7 =
+* Add Facebook ILike Report
 
 = 0.6 =
 * Fixes bug firefox [object Object]
