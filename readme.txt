@@ -3,7 +3,7 @@ Contributors: Jodacame
 Donate link:http://nexxuz.com/donate.php
 Tags: SEO, pagerank, google, alexa, feedburner, followers, twitter, yahoo, Backlinks, youtube, subcribers, widget, dashboard
 Requires at least: 2,7
-Tested up to: 3.1
+Tested up to: 3.3
 Stable tag: trunk
 
 Seo report on your dashboard of all your statistics ranking. Pagerank, Alexa Rank, Backlinks...
