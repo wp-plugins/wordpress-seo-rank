@@ -116,7 +116,7 @@ function wp_seo_rank_widget_admin_function() {
 					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/facebook.png" align="absmiddle" style="padding-right:10px">Facebook</span> 
 				</td>
 				<td align="right">
-					<span style="color:#000000;font-weight:bold;"><?php echo number_format($data['ValFacebook']); ?></span>
+					<span style="color:#000000;font-weight:bold;"><a target="_blank" href="<?php echo $data['facebook']; ?>"><?php echo number_format($data['ValFacebook']); ?></a></span>
 						
 				</td>
 			</tr>
