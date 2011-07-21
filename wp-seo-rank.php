@@ -2,10 +2,10 @@
 /*
 Plugin Name: Wordpress SEO-Rank
 Plugin URI: http://nexxuz.com/wordpress-seo-rank-plugin.html
-Description: Seo report on your  dashboard of all your statistics ranking in web:<br>\n<br>- PageRank Google<br>- Alexa Rank	<br>- Backlinks Google	<br>- Backlinks Yahoo	<br>- Users Registered	<br>- FeedBurner Subscribers	<br>- Followers Twitter	<br>- Youtube Subscribers <br>- Widget
+Description: Seo report on your  dashboard of all your statistics ranking in web:<br>\n<br>- PageRank Google<br>- Alexa Rank	<br>- Backlinks Google	<br>- Backlinks Yahoo	<br>- Users Registered	<br>- FeedBurner Subscribers	<br>- Followers Twitter	<br>- Youtube Subscribers <br> Facebook Likes <br> - Widget
 Author: Jodacame
 Author URI: http://nexxuz.com/
-Version: 0.9
+Version: 1.0
 
 
 
@@ -401,7 +401,7 @@ function control(){
 	if($data['show_youtube']=='on')
 		$show_youtube="CHECKED";
 	if($data['show_facebook']=='on')
-		$show_youtube="CHECKED";
+		$show_facebook="CHECKED";
 
     
 	?>
