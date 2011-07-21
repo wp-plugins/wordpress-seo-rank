@@ -5,7 +5,7 @@ Plugin URI: http://nexxuz.com/wordpress-seo-rank-plugin.html
 Description: Seo report on your  dashboard of all your statistics ranking in web:<br>\n<br>- PageRank Google<br>- Alexa Rank	<br>- Backlinks Google	<br>- Backlinks Yahoo	<br>- Users Registered	<br>- FeedBurner Subscribers	<br>- Followers Twitter	<br>- Youtube Subscribers <br>- Widget
 Author: Jodacame
 Author URI: http://nexxuz.com/
-Version: 0.7
+Version: 0.8
 
 
 
@@ -113,7 +113,7 @@ function wp_seo_rank_widget_admin_function() {
 			</tr>
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/facebook.png" align="absmiddle" style="padding-right:10px">Followers</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/facebook.png" align="absmiddle" style="padding-right:10px">Facebook</span> 
 				</td>
 				<td align="right">
 					<span style="color:#000000;font-weight:bold;"><?php echo number_format($data['ValFacebook']); ?></span>
@@ -476,7 +476,7 @@ function control(){
 			</tr>
 			<tr>
 				<td>
-					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/facebook.png" align="absmiddle" style="padding-right:10px">Followers</span> 
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/facebook.png" align="absmiddle" style="padding-right:10px">Facebook</span> 
 				</td>
 			<td>
 				<input type="checkbox" <?php echo $show_facebook; ?> name="wp_seo_rank_show_facebook">
