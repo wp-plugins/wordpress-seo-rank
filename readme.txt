@@ -46,6 +46,9 @@ web:
 
 == Changelog ==
 
+= 1.1 =
+fixed API Pagerank - Google
+
 = 0.7 =
 * Add Facebook ILike Report
 

@@ -5,7 +5,7 @@ Plugin URI: http://nexxuz.com/wordpress-seo-rank-plugin.html
 Description: Seo report on your  dashboard of all your statistics ranking in web:<br>\n<br>- PageRank Google<br>- Alexa Rank	<br>- Backlinks Google	<br>- Backlinks Yahoo	<br>- Users Registered	<br>- FeedBurner Subscribers	<br>- Followers Twitter	<br>- Youtube Subscribers <br> Facebook Likes <br> - Widget
 Author: Jodacame
 Author URI: http://nexxuz.com/
-Version: 1.0
+Version: 1.1
 
 
 
@@ -65,7 +65,7 @@ function wp_seo_rank_widget_admin_function() {
 					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/google.png" align="absmiddle" style="padding-right:10px">Backlinks Google</span> 
 				</td>
 			<td align="right">
-					<span style="color:#000000;font-weight:bold;"><a target="_blank" href="http://www.google.com/search?oe=utf8&ie=utf8&source=uds&start=0&filter=0&hl=en&q=link:<?php echo site_url(); ?>"><?php echo number_format($data['ValBacklinksGoogle']); ?></a></span>
+					<span style="color:#000000;font-weight:bold;"><a target="_blank" href="http://www.google.com/search?oe=utf8&ie=utf8&source=uds&start=0&filter=0&hl=en&q=link:<?php echo site_url(); ?>"><?php echo number_format(intval($data['ValBacklinksGoogle'])); ?></a></span>
 						
 				</td>
 			</tr>
@@ -258,7 +258,7 @@ function GetFacebook($pageF)
 	$obj = json_decode($json);
 	$like_no = $obj->{'shares'};
 	
-	return trim($like_no);
+	return intval(trim($like_no));
 	
 }
 
@@ -267,7 +267,7 @@ function followerSeo($user){
 
 	$xml=simplexml_load_file("http://twitter.com/users/show.xml?screen_name=$user");
 	$resp=$xml->followers_count;
-	return trim($resp);
+	return intval(trim($resp));
 
 }
 function GetSubscriberCountYoutube($user){
@@ -275,7 +275,7 @@ function GetSubscriberCountYoutube($user){
 	$xmlData = str_replace('yt:', 'yt', $xmlData); 
 	$xml = new SimpleXMLElement($xmlData);   
 	$resp=$xml->ytstatistics['subscriberCount'];
-	return trim($resp);
+	return intval(trim($resp));
 }
 
 function alexaRank($domain){
@@ -311,7 +311,7 @@ function getYahooLinks($dominio) {
 	$contenido = @file_get_contents($feed);
 	preg_match('/totalResultsAvailable=("(.*)"?)/', $contenido, $treffer);
 	$total=str_replace('"','',$treffer[1]);
-	return $total;			
+	return intval($total);			
  
 }
 
@@ -328,7 +328,7 @@ function get_match($regex,$content){
 }
 
 function getprSeo($url){
-	$dc = "http://toolbarqueries.google.com";
+	$dc = "http://toolbarqueries.google.com/";
 	$gpr =& new GooglePageRank(trim($url));
 	$pagerank = $gpr->getPageRank($dc);
 	return $pagerank;
@@ -723,7 +723,7 @@ class GooglePageRank {
 
 	function pageRankUrl($dcchosen)
 	{
-		return $dcchosen . '/search?client=navclient-auto&features=Rank:&q=info:'.$this->_url.'&ch='.$this->checksum();
+		return $dcchosen . 'tbr?client=navclient-auto&features=Rank:&q=info:'.$this->_url.'&ch='.$this->checksum();
 	}
 
 	function getPageRank($dcchosen)
