@@ -5,7 +5,7 @@ Plugin URI: http://nexxuz.com/wordpress-seo-rank-plugin.html
 Description: Seo report on your  dashboard of all your statistics ranking in web:<br>\n<br>- PageRank Google<br>- Alexa Rank	<br>- Backlinks Google	<br>- Backlinks Yahoo	<br>- Users Registered	<br>- FeedBurner Subscribers	<br>- Followers Twitter	<br>- Youtube Subscribers <br> Facebook Likes <br> - Widget
 Author: Jodacame
 Author URI: http://nexxuz.com/
-Version: 1.1
+Version: 1.2
 
 
 
@@ -251,6 +251,7 @@ add_action('wp_dashboard_setup', 'wp_seo_rank_add_dashboard_widgets' );
 
 function GetFacebook($pageF) 
 {
+	/*
 	$data = file_get_contents('http://graph.facebook.com/?id='.$pageF);
 
 	$json = $data;
@@ -258,7 +259,12 @@ function GetFacebook($pageF)
 	$obj = json_decode($json);
 	$like_no = $obj->{'shares'};
 	
-	return intval(trim($like_no));
+	return intval(trim($like_no));*/
+
+	$url = $pageF;
+	$url2 = "http://api.facebook.com/method/fql.query?query=select%20like_count%20from%20link_stat%20where%20url='$url'&format=atom";
+	$xml=simplexml_load_file($url2);
+	return intval($xml->link_stat->like_count);
 	
 }
 

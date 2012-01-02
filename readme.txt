@@ -46,11 +46,13 @@ web:
 
 == Changelog ==
 
+= 1.2 =
+Fixed Facebook Count
 = 1.1 =
 fixed API Pagerank - Google
 
 = 0.7 =
-* Add Facebook ILike Report
+* Add Facebook Like Report
 
 = 0.6 =
 * Fixes bug firefox [object Object]
