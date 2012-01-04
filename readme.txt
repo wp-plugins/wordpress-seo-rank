@@ -1,7 +1,7 @@
 === Wordpress Seo-Rank===
-Contributors: jodacame
+Contributors: Jodacame
 Donate link:http://nexxuz.com/donate.php
-Tags: SEO, pagerank, google, alexa, feedburner, followers, twitter, yahoo, Backlinks, youtube, subcribers, widget, dashboard
+Tags: SEO, pagerank, google, alexa, feedburner, followers, twitter, yahoo, Backlinks, youtube, subcribers, widget, dashboard, +1, plus, google plus
 Requires at least: 2,7
 Tested up to: 3.3
 Stable tag: trunk
@@ -26,6 +26,7 @@ web:
  - Youtube Subscribers
  - Widget
  - Facebook
+ - Google +1
 
 = VIEW DEMO ONLINE =
 [WIDGET](http://nexxuz.com)
@@ -46,8 +47,12 @@ web:
 
 == Changelog ==
 
+= 1.3 =
+* Add Google +1 Count
+
 = 1.2 =
-Fixed Facebook Count
+* Fixed Facebook Count
+
 = 1.1 =
 fixed API Pagerank - Google
 
