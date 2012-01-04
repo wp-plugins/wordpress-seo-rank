@@ -1,5 +1,5 @@
 === Wordpress Seo-Rank===
-Contributors: Jodacame
+Contributors: jodacame
 Donate link:http://nexxuz.com/donate.php
 Tags: SEO, pagerank, google, alexa, feedburner, followers, twitter, yahoo, Backlinks, youtube, subcribers, widget, dashboard
 Requires at least: 2,7

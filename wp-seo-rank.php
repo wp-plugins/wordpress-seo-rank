@@ -2,10 +2,10 @@
 /*
 Plugin Name: Wordpress SEO-Rank
 Plugin URI: http://nexxuz.com/wordpress-seo-rank-plugin.html
-Description: Seo report on your  dashboard of all your statistics ranking in web:<br>\n<br>- PageRank Google<br>- Alexa Rank	<br>- Backlinks Google	<br>- Backlinks Yahoo	<br>- Users Registered	<br>- FeedBurner Subscribers	<br>- Followers Twitter	<br>- Youtube Subscribers <br> Facebook Likes <br> - Widget
+Description: Seo report on your  dashboard of all your statistics ranking in web:<br>\n<br>- PageRank Google<br>- Alexa Rank	<br>- Backlinks Google	<br>- Backlinks Yahoo	<br>- Users Registered	<br>- FeedBurner Subscribers	<br>- Followers Twitter	<br>- Youtube Subscribers <br> - Facebook Likes <br> - Google +1  <br> - Widget <br> 
 Author: Jodacame
 Author URI: http://nexxuz.com/
-Version: 1.2
+Version: 1.3
 
 
 
@@ -131,6 +131,16 @@ function wp_seo_rank_widget_admin_function() {
 				</td>
 			</tr>
 			
+			<tr>
+				<td>
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/plus.png" align="absmiddle" style="padding-right:10px">Google +1</span> 
+				</td>
+				<td align="right">
+					<span style="color:#5C8AB6;font-weight:bold;"><?php echo number_format($data['ValPlus']); ?></span>
+						
+				</td>
+			</tr>
+			
 			
 			<tr>
 				<td>
@@ -238,6 +248,7 @@ function update_seo($force=null){
 		$data['ValFollowers'] = followerSeo($data["twitter"]);
 		$data['ValYoutube'] = GetSubscriberCountYoutube($data["youtube"]);
 		$data['ValFacebook'] = GetFacebook($data["facebook"]);
+		$data['ValPlus'] = getPlus($url);
 		$data['ValLastUpdate'] = date('Y-m-d');
 		update_option('wp_seo_rank', $data);
 	}
@@ -268,6 +279,24 @@ function GetFacebook($pageF)
 	
 }
 
+function getPlus($url){
+ 
+ $ch = curl_init();  
+ curl_setopt($ch, CURLOPT_URL, "https://clients6.google.com/rpc?key=AIzaSyCKSbrvQasunBoV16zDH9R33D88CeLr9gQ");
+ curl_setopt($ch, CURLOPT_POST, 1);
+ curl_setopt($ch, CURLOPT_POSTFIELDS, '[{"method":"pos.plusones.get","id":"p","params":{"nolog":true,"id":"' . $url . '/","source":"widget","userId":"@viewer","groupId":"@self"},"jsonrpc":"2.0","key":"p","apiVersion":"v1"}]');
+ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
+ 
+   
+ $curl_results = curl_exec ($ch);
+ curl_close ($ch);
+ 
+ $parsed_results = json_decode($curl_results, true);
+ 
+ return intval($parsed_results[0]['result']['metadata']['globalCounts']['count']);
+
+}
  
 function followerSeo($user){
 
@@ -389,6 +418,7 @@ function control(){
   $show_twitter='';
   $show_youtube='';
   $show_facebook='';
+  $show_plus='';
 
 	if($data['show_pr']=='on')
 		$show_pr="CHECKED";
@@ -408,6 +438,8 @@ function control(){
 		$show_youtube="CHECKED";
 	if($data['show_facebook']=='on')
 		$show_facebook="CHECKED";
+	if($data['show_plus']=='on')
+		$show_plus="CHECKED";
 
     
 	?>
@@ -496,6 +528,14 @@ function control(){
 				<input type="checkbox" <?php echo $show_youtube; ?> name="wp_seo_rank_show_youtube">
 				</td>
 			</tr>
+			<tr>
+				<td>
+					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/plus.png" align="absmiddle" style="padding-right:10px">Google +1</span> 
+				</td>
+			<td>
+				<input type="checkbox" <?php echo $show_plus; ?> name="wp_seo_rank_show_plus">
+				</td>
+			</tr>
 			
 			
 		
@@ -518,6 +558,7 @@ function control(){
     $data['show_youtube'] = attribute_escape($_POST['wp_seo_rank_show_youtube']);
     $data['show_date'] = attribute_escape($_POST['wp_seo_rank_show_date']);
     $data['show_facebook'] = attribute_escape($_POST['wp_seo_rank_show_facebook']);
+    $data['show_plus'] = attribute_escape($_POST['wp_seo_rank_show_plus']);
     
     update_option('wp_seo_rank', $data);
   }
@@ -624,6 +665,16 @@ function control(){
 				</td>
 				<td align="right">
 					<span style="font-weight:bold;"><?php echo number_format($data['ValYoutube']); ?></span>
+						
+				</td>
+			</tr>
+			<?php }if($data['show_plus']=='on'){ ?>
+			<tr>
+				<td>
+					<span ><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/plus.png" align="absmiddle" style="padding-right:10px">Google +1</span> 
+				</td>
+				<td align="right">
+					<span style="font-weight:bold;"><?php echo number_format($data['ValPlus']); ?></span>
 						
 				</td>
 			</tr>
