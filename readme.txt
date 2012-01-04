@@ -47,6 +47,9 @@ web:
 
 == Changelog ==
 
+= 1.4 =
+* Change CSS
+
 = 1.3 =
 * Add Google +1 Count
 

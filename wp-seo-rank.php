@@ -5,7 +5,7 @@ Plugin URI: http://nexxuz.com/wordpress-seo-rank-plugin.html
 Description: Seo report on your  dashboard of all your statistics ranking in web:<br>\n<br>- PageRank Google<br>- Alexa Rank	<br>- Backlinks Google	<br>- Backlinks Yahoo	<br>- Users Registered	<br>- FeedBurner Subscribers	<br>- Followers Twitter	<br>- Youtube Subscribers <br> - Facebook Likes <br> - Google +1  <br> - Widget <br> 
 Author: Jodacame
 Author URI: http://nexxuz.com/
-Version: 1.3
+Version: 1.4
 
 
 
@@ -38,10 +38,10 @@ function wp_seo_rank_widget_admin_function() {
 	?>
 	
 		<center>
-		<img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/logo.png">
-		<br>
+		<!--<img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/logo.png">-->
+		
 		</center>
-		<table  id="wp-seo-rank" style="width:95%"  CELLSPACING="5px">
+		<table  id="wp-seo-rank"  class="adsTable" style="width:95%"  CELLSPACING="5px">
 			<tr>
 				<td>
 					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/pr.png" align="absmiddle" style="padding-right:10px">PageRank</span> 
@@ -384,8 +384,29 @@ add_action("wp_login", 'update_seoA');
   echo ( '
   <style>
   #wp-seo-rank td{
-	  border:1px #E5E5E5 dashed;
-  }  
+	  border:1px #F3F3F3 dashed;
+  }
+  
+.adsTable
+{
+  
+  background-color: #fff;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  margin-top:20px;
+  margin-left:4px;
+  margin-right:4px;
+  padding: 3px;
+  
+}
+.adsTable td
+{
+ font-size:0.8em;
+ padding:0px;
+  border-bottom: 1px dotted #ccc;
+}  
   </style>' ); 
 }
 add_action('admin_head', 'writeCSSSEO');
