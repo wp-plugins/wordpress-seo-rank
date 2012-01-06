@@ -47,6 +47,9 @@ web:
 
 == Changelog ==
 
+= 1.6 =
+* Fixed Link facebook 
+
 = 1.5 =
 * Add FanPage Support
 

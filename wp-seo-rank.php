@@ -5,7 +5,7 @@ Plugin URI: http://nexxuz.com/wordpress-seo-rank-plugin.html
 Description: Seo report on your  dashboard of all your statistics ranking in web:<br>\n<br>- PageRank Google<br>- Alexa Rank	<br>- Backlinks Google	<br>- Backlinks Yahoo	<br>- Users Registered	<br>- FeedBurner Subscribers	<br>- Followers Twitter	<br>- Youtube Subscribers <br> - Facebook Likes <br> - Google +1  <br> - Widget <br> 
 Author: Jodacame
 Author URI: http://nexxuz.com/
-Version: 1.5
+Version: 1.6
 
 
 
@@ -116,7 +116,7 @@ function wp_seo_rank_widget_admin_function() {
 					<span style="color:#5C8AB6"><img src="<?php echo WP_PLUGIN_URL ?>/wordpress-seo-rank/images/facebook.png" align="absmiddle" style="padding-right:10px">Facebook</span> 
 				</td>
 				<td align="right">
-					<span style="color:#000000;font-weight:bold;"><a target="_blank" href="<?php echo $data['facebook']; ?>"><?php echo number_format($data['ValFacebook']); ?></a></span>
+					<span style="color:#000000;font-weight:bold;"><a target="_blank" href="https://www.facebook.com/<?php echo $data['facebook']; ?>"><?php echo number_format($data['ValFacebook']); ?></a></span>
 						
 				</td>
 			</tr>
