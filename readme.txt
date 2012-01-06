@@ -3,7 +3,7 @@ Contributors: Jodacame
 Donate link:http://nexxuz.com/donate.php
 Tags: SEO, pagerank, google, alexa, feedburner, followers, twitter, yahoo, Backlinks, youtube, subcribers, widget, dashboard, +1, plus, google plus
 Requires at least: 2,7
-Tested up to: 3.3
+Tested up to: 3.3.1
 Stable tag: trunk
 
 Seo report on your dashboard of all your statistics ranking. Pagerank, Alexa Rank, Backlinks...
@@ -46,6 +46,9 @@ web:
 1. Go to widgets and setting this
 
 == Changelog ==
+
+= 1.5 =
+* Add FanPage Support
 
 = 1.4 =
 * Change CSS
