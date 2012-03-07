@@ -5,7 +5,7 @@ Plugin URI: http://nexxuz.com/wordpress-seo-rank-plugin.html
 Description: Seo report on your  dashboard of all your statistics ranking in web:<br>\n<br>- PageRank Google<br>- Alexa Rank	<br>- Backlinks Google	<br>- Backlinks Yahoo	<br>- Users Registered	<br>- FeedBurner Subscribers	<br>- Followers Twitter	<br>- Youtube Subscribers <br> - Facebook Likes <br> - Google +1  <br> - Widget <br> 
 Author: Jodacame
 Author URI: http://nexxuz.com/
-Version: 1.6
+Version: 1.7
 
 
 
@@ -308,6 +308,8 @@ function getPlus($url){
 }
  
 function followerSeo($user){
+	if (trim($user)=='')
+		return 0;
 
 	$xml=simplexml_load_file("http://twitter.com/users/show.xml?screen_name=$user");
 	$resp=$xml->followers_count;
@@ -315,7 +317,11 @@ function followerSeo($user){
 
 }
 function GetSubscriberCountYoutube($user){
-	$xmlData = file_get_contents('http://gdata.youtube.com/feeds/api/users/' . strtolower($user));  
+	if (trim($user)=='')
+		return 0;
+	$xmlData = @file_get_contents('http://gdata.youtube.com/feeds/api/users/' . strtolower($user));  
+	if(strlen($xmlData)<20)
+		return 0;
 	$xmlData = str_replace('yt:', 'yt', $xmlData); 
 	$xml = new SimpleXMLElement($xmlData);   
 	$resp=$xml->ytstatistics['subscriberCount'];
