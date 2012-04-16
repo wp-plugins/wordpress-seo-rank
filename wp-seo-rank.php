@@ -3,9 +3,9 @@
 Plugin Name: Wordpress SEO-Rank
 Plugin URI: http://nexxuz.com/wordpress-seo-rank-plugin.html
 Description: Seo report on your  dashboard of all your statistics ranking in web:<br>\n<br>- PageRank Google<br>- Alexa Rank	<br>- Backlinks Google	<br>- Backlinks Yahoo	<br>- Users Registered	<br>- FeedBurner Subscribers	<br>- Followers Twitter	<br>- Youtube Subscribers <br> - Facebook Likes <br> - Google +1  <br> - Widget <br> 
-Author: Jodacame
+Author: jodacame
 Author URI: http://nexxuz.com/
-Version: 1.7
+Version: 1.8
 
 
 
@@ -264,7 +264,7 @@ add_action('wp_dashboard_setup', 'wp_seo_rank_add_dashboard_widgets' );
 function GetFacebook($pageF) 
 {
 	/*
-	$data = file_get_contents('http://graph.facebook.com/?id='.$pageF);
+	$data = php_curl('http://graph.facebook.com/?id='.$pageF);
 
 	$json = $data;
 
@@ -281,7 +281,7 @@ function GetFacebook($pageF)
 	if($f == 0)
 	{
 		$url = "http://graph.facebook.com/".$pageF;
-		$page_id= json_decode(file_get_contents($url));
+		$page_id= json_decode(php_curl($url));
 		$f =  intval($page_id->likes);
 	}
 	return $f;	
@@ -319,7 +319,7 @@ function followerSeo($user){
 function GetSubscriberCountYoutube($user){
 	if (trim($user)=='')
 		return 0;
-	$xmlData = @file_get_contents('http://gdata.youtube.com/feeds/api/users/' . strtolower($user));  
+	$xmlData = php_curl('http://gdata.youtube.com/feeds/api/users/' . strtolower($user));  
 	if(strlen($xmlData)<20)
 		return 0;
 	$xmlData = str_replace('yt:', 'yt', $xmlData); 
@@ -350,7 +350,7 @@ function alexaRank($domain){
     return $str[1];
 }
 function get_backlinks_google($url){
-	$content = file_get_contents('http://ajax.googleapis.com/ajax/services/search/web?v=1.0&filter=0&key=ABQIAAAA6f5Achoodo5s2Q2049vn6BSIkO30j4gnxwlOBxQkFXOonq3PsBQ0hUYBhAxwx8DYL03zbFQWDSv_nA&q=link:' . urlencode($url));		
+	$content = php_curl('http://ajax.googleapis.com/ajax/services/search/web?v=1.0&filter=0&key=ABQIAAAA6f5Achoodo5s2Q2049vn6BSIkO30j4gnxwlOBxQkFXOonq3PsBQ0hUYBhAxwx8DYL03zbFQWDSv_nA&q=link:' . urlencode($url));		
 	$data = json_decode($content);
 	return intval($data->responseData->cursor->estimatedResultCount);	
  
@@ -358,7 +358,7 @@ function get_backlinks_google($url){
 function getYahooLinks($dominio) {
 	$appid = "31245124213";
 	$feed="http://search.yahooapis.com/SiteExplorerService/V1/inlinkData?appid=".$appid."&query=$dominio&entire_site=1&omit_inlinks=domain";
-	$contenido = @file_get_contents($feed);
+	$contenido = php_curl($feed);
 	preg_match('/totalResultsAvailable=("(.*)"?)/', $contenido, $treffer);
 	$total=str_replace('"','',$treffer[1]);
 	return intval($total);			
@@ -367,7 +367,7 @@ function getYahooLinks($dominio) {
 
 function getFeedBurner($user){
 
-	$xml=file_get_contents("https://feedburner.google.com/api/awareness/1.0/GetFeedData?uri=http://feeds.feedburner.com/$user");
+	$xml=php_curl("https://feedburner.google.com/api/awareness/1.0/GetFeedData?uri=http://feeds.feedburner.com/$user");
 	
 	return get_match('/circulation="(.*)"/isU',$xml);
 
@@ -383,6 +383,14 @@ function getprSeo($url){
 	$pagerank = $gpr->getPageRank($dc);
 	return $pagerank;
 	
+}
+
+function php_curl($url){
+	$c = curl_init("https://gdata.youtube.com/feeds/api/videos/$video");
+	curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
+	$xmlData = curl_exec($c);
+	curl_close($c);	
+	return $xmlData;
 }
 /*************************
  * FIN FUNCIONES SEO
