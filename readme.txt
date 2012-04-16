@@ -46,6 +46,9 @@ web:
 1. Go to widgets and setting this
 
 == Changelog ==
+= 1.9 = 
+* Fixed bug
+
 = 1.8 =
 * Change function file_get_contents to curl
 
