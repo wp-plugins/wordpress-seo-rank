@@ -386,7 +386,7 @@ function getprSeo($url){
 }
 
 function php_curl($url){
-	$c = curl_init("https://gdata.youtube.com/feeds/api/videos/$video");
+	$c = curl_init($url);
 	curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
 	$xmlData = curl_exec($c);
 	curl_close($c);	
