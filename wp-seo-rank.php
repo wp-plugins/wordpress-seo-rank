@@ -726,7 +726,7 @@ function control(){
 			
 					
 		</table>
-		<!--<small><span style="width:98%;text-align:right;display:block"><a href="http://nexxuz.com/wordpress-seo-rank-plugin.html">Wordpress SEO-Rank</a></span><br></small>-->
+
     <?
     echo $args['after_widget'];
   }
